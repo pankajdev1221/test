@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Montserrat);
+      [style*="Montserrat"] {
+        font-family: "Montserrat", sans-serif !important;
+      }
+
+      #radio-1:checked ~ .slider .slider__slide--1,
+      #radio-1:checked ~ .slider__nav__wrap .slider__nav[for="radio-1"],
+      #radio-2:checked ~ .slider .slider__slide--2,
+      #radio-2:checked ~ .slider__nav__wrap .slider__nav[for="radio-2"],
+      #radio-3:checked ~ .slider .slider__slide--3,
+      #radio-3:checked ~ .slider__nav__wrap .slider__nav[for="radio-3"],
+      #radio-4:checked ~ .slider .slider__slide--4,
+      #radio-4:checked ~ .slider__nav__wrap .slider__nav[for="radio-4"] {
+        opacity: 1 !important;
+        z-index: 2;
+      }
+
+      #supported:checked ~ .slider .slider__slide--1,
+      #supported:checked ~ .slider .slider__slide--2,
+      #supported:checked ~ .slider .slider__slide--3,
+      #supported:checked ~ .slider .slider__slide--4,
+      #supported:checked ~ .slider .slider__slide--1 img,
+      #supported:checked ~ .slider .slider__slide--2 img,
+      #supported:checked ~ .slider .slider__slide--3 img,
+      #supported:checked ~ .slider .slider__slide--4 img {
+        display: block !important;
+        font-size: 12px !important;
+        max-height: none !important;
+        line-height: 1.5 !important;
+      }
+
+      .slider {
+        position: relative;
+        width: 100%;
+        padding-bottom: 53%;
+        height: 0;
+        overflow: hidden;
+      }
+      .slider__nav {
+        float: left;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: opacity 500ms;
+        border-top: 3px solid #4bc0be;
+      }
+      .slider__nav img {
+        width: 100%;
+        height: auto;
+      }
+      .slider__nav:hover {
+        opacity: 1;
+        border: inset 3px solid red;
+      }
+      .slider__slide {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0 auto;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1500ms;
+      }
+      .slider__slide img {
+        width: 100%;
+        height: 1;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: #252527;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+      }
+      .arrow__prev::after,
+      .arrow__next::after {
+        content: "";
+        border: 0.15em solid #4bc0be;
+        height: 10px;
+        width: 10px;
+        display: block;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      .arrow__prev {
+        left: 0;
+      }
+      .arrow__prev::after {
+        border-top-color: rgba(0, 0, 0, 0);
+        border-right-color: rgba(0, 0, 0, 0);
+        margin: 13px 15px;
+      }
+      .arrow__prev:hover::after {
+        border-color: #ffffff;
+        border-top-color: rgba(0, 0, 0, 0);
+        border-right-color: rgba(0, 0, 0, 0);
+      }
+      .arrow__next {
+        right: 0;
+      }
+      .arrow__next::after {
+        border-bottom-color: rgba(0, 0, 0, 0);
+        border-left-color: rgba(0, 0, 0, 0);
+        margin: 13px 10px;
+      }
+      .arrow__next:hover::after {
+        border-color: #ffffff;
+        border-bottom-color: rgba(0, 0, 0, 0);
+        border-left-color: rgba(0, 0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <html>
+      <body
+        bgcolor="#252527"
+        leftmargin="0"
+        topmargin="0"
+        marginwidth="0"
+        marginheight="0"
+      >
+        <table
+          width="100%"
+          align="center"
+          bgcolor="#252527"
+          border="0"
+          cellpadding="0"
+          cellspacing="0"
+        >
+          <tr>
+            <td>
+              <!--[if (gte mso 9)|(IE)]>
+					<table width="600" align="center" border="0" cellspacing="0" cellpadding="0" style="margin: auto;">
+						<tr>
+							<td>
+							<![endif]-->
+              <table
+                width="100%"
+                align="center"
+                border="0"
+                cellpadding="0"
+                cellspacing="0"
+                style="max-width: 660px; margin: auto"
+              >
+                <tr>
+                  <td
+                    bgcolor="#e5e4e4"
+                    style="
+                      padding: 20px 0 0 0;
+                      text-align: center;
+                      border-top: 5px solid #4bc0be;
+                    "
+                  >
+                    <h1>upto 182 $NCASH* per EPOCH</h1>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td
+                    bgcolor="#e5e4e4"
+                    style="padding: 10px; text-align: center"
+                  >
+                    <h1
+                      style="
+                        font: 600 18px/150% Arial, 'Montserrat';
+                        color: #252527;
+                        margin: 0;
+                        text-transform: uppercase;
+                      "
+                    >
+                      You can’t just miss phase 1
+                    </h1>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="100%" style="font-size: 0">
+                    <!--[if mso]><p class="always-show" style="display: none;"><![endif]-->
+                    <input
+                      type="radio"
+                      style="
+                        display: none !important;
+                        font-size: 0;
+                        max-height: 0;
+                        line-height: 0;
+                        visibility: hidden;
+                        mso-hide: all;
+                      "
+                      class="always-show"
+                      name="product__slider"
+                      id="radio-1"
+                      checked="checked"
+                    />
+                    <input
+                      type="radio"
+                      style="
+                        display: none !important;
+                        font-size: 0;
+                        max-height: 0;
+                        line-height: 0;
+                        visibility: hidden;
+                        mso-hide: all;
+                      "
+                      class="always-show"
+                      name="product__slider"
+                      id="radio-2"
+                    />
+                    <input
+                      type="radio"
+                      style="
+                        display: none !important;
+                        font-size: 0;
+                        max-height: 0;
+                        line-height: 0;
+                        visibility: hidden;
+                        mso-hide: all;
+                      "
+                      class="always-show"
+                      name="product__slider"
+                      id="radio-3"
+                    />
+                    <input
+                      type="radio"
+                      style="
+                        display: none !important;
+                        font-size: 0;
+                        max-height: 0;
+                        line-height: 0;
+                        visibility: hidden;
+                        mso-hide: all;
+                      "
+                      class="always-show"
+                      name="product__slider"
+                      id="radio-4"
+                    />
+                    <input
+                      type="radio"
+                      style="
+                        display: none !important;
+                        font-size: 0;
+                        max-height: 0;
+                        line-height: 0;
+                        visibility: hidden;
+                        mso-hide: all;
+                      "
+                      class="always-show"
+                      name="product__slider"
+                      id="radio-5"
+                    />
+
+                    <input
+                      type="radio"
+                      style="
+                        display: none !important;
+                        font-size: 0;
+                        max-height: 0;
+                        line-height: 0;
+                        visibility: hidden;
+                        mso-hide: all;
+                      "
+                      class="always-show"
+                      name="supported"
+                      id="supported"
+                      checked="checked"
+                    />
+                    <!--[if mso]></p><![endif]-->
+
+                    <div class="slider">
+                      <div class="slider__slide slider__slide--1">
+                        <a href="https://www.google.com" target="_blank">
+                          <img
+                            src="https://i.postimg.cc/XvLrjvs5/1.png"
+                            alt="Slide 1"
+                            border="0"
+                            height="auto"
+                            width="100%"
+                          />
+                        </a>
+
+                        <label class="arrow arrow__prev" for="radio-5"></label>
+                        <label class="arrow arrow__next" for="radio-2"></label>
+                      </div>
+
+                      <!--[if mso]><p class="always-show" style="display: none;"><![endif]-->
+                      <div
+                        class="slider__slide slider__slide--2"
+                        style="
+                          display: none;
+                          font-size: 0;
+                          max-height: 0;
+                          line-height: 0;
+                          mso-hide: all;
+                        "
+                      >
+                        <a href="https://www.google.com" target="_blank">
+                          <img
+                            src="https://i.postimg.cc/NMPLXzqf/2.png"
+                            alt="Slide 2"
+                            border="0"
+                            height="auto"
+                            width="100%"
+                            style="
+                              display: none;
+                              font-size: 0;
+                              max-height: 0;
+                              line-height: 0;
+                              mso-hide: all;
+                            "
+                          />
+                        </a>
+
+                        <label class="arrow arrow__prev" for="radio-1"></label>
+                        <label class="arrow arrow__next" for="radio-3"></label>
+                      </div>
+
+                      <div
+                        class="slider__slide slider__slide--3"
+                        style="
+                          display: none;
+                          font-size: 0;
+                          max-height: 0;
+                          line-height: 0;
+                          mso-hide: all;
+                        "
+                      >
+                        <a href="https://www.google.com" target="_blank">
+                          <img
+                            src="https://i.postimg.cc/T1L1JJfj/3.png"
+                            alt="Slide 3"
+                            border="0"
+                            height="auto"
+                            width="100%"
+                            style="
+                              display: none;
+                              font-size: 0;
+                              max-height: 0;
+                              line-height: 0;
+                              mso-hide: all;
+                            "
+                          />
+                        </a>
+
+                        <label class="arrow arrow__prev" for="radio-2"></label>
+                        <label class="arrow arrow__next" for="radio-4"></label>
+                      </div>
+
+                      <div
+                        class="slider__slide slider__slide--4"
+                        style="
+                          display: none;
+                          font-size: 0;
+                          max-height: 0;
+                          line-height: 0;
+                          mso-hide: all;
+                        "
+                      >
+                        <a href="https://www.google.com" target="_blank">
+                          <img
+                            src="https://i.postimg.cc/VspdLpWK/4.png"
+                            alt="Slide 4"
+                            border="0"
+                            height="auto"
+                            width="100%"
+                            style="
+                              display: none;
+                              font-size: 0;
+                              max-height: 0;
+                              line-height: 0;
+                              mso-hide: all;
+                            "
+                          />
+                        </a>
+
+                        <label class="arrow arrow__prev" for="radio-3"></label>
+                        <label class="arrow arrow__next" for="radio-5"></label>
+                      </div>
+                      <div
+                        class="slider__slide slider__slide--4"
+                        style="
+                          display: none;
+                          font-size: 0;
+                          max-height: 0;
+                          line-height: 0;
+                          mso-hide: all;
+                        "
+                      >
+                        <a href="https://www.google.com" target="_blank">
+                          <img
+                            src="https://i.postimg.cc/Y059nLC5/5.png"
+                            alt="Slide 4"
+                            border="0"
+                            height="auto"
+                            width="100%"
+                            style="
+                              display: none;
+                              font-size: 0;
+                              max-height: 0;
+                              line-height: 0;
+                              mso-hide: all;
+                            "
+                          />
+                        </a>
+
+                        <label class="arrow arrow__prev" for="radio-4"></label>
+                        <label class="arrow arrow__next" for="radio-1"></label>
+                      </div>
+                      <!--[if mso]></p><![endif]-->
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <!--[if (gte mso 9)|(IE)]>
+							</td>
+						</tr>
+					</table>
+					<![endif]-->
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+  </body>
+</html>
